@@ -4,9 +4,84 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>worldsHardestQuiz</title>
+    <link rel="stylesheet" href="Assets/CSS/style.css">
 </head>
 <body>
-    
+    <div class="startBtn"><button>Start Quiz</button></div>
+
+
+    <div class="infoBox">
+        <div class="infoTitle">
+            <span>Rules of Quiz</span>
+        </div>
+        <div class="infoList">
+            <div class="info">1. You get 15 seconds.</div>
+            <div class="info">2. You only get one shot, dont miss.</div>
+            <div class="info">3. Dont run out of time.</div>
+            <div class="info">4. You cant LEEEEEEAVE ONCE STARTED!</div>
+            <div class="info">5. Correct answers earn you points.</div>
+        </div>
+        <div class="buttons">
+            <button class="quit">Exit Quiz</button>
+            <button class="restart">Continue</button>
+        </div>
+    </div>
+
+
+    <div class="quizBox">
+        <header>
+            <div class="title">worldsHardestQuiz</div>
+            <div class="timer">
+                <div class="timeText">Time Left</div>
+                <div class="timerSec">15</div>
+            </div>
+        </header>
+        <section>
+            <div class="question">
+                <!-- <span>What does...mean?</span> -->
+            </div>
+            <div class="questionList">
+                <!-- <div class="option">
+                    <span>Lorem ipsum dolor sit</span>
+                    <div></div>
+                </div>
+                <div class="option">
+                    <span>Lorem ipsum dolor sit amet consec</span>
+                    <div></div>
+                </div>
+                <div class="option">
+                    <span>Lorem ipsum dolor sit</span>
+                </div>
+                <div class="option">
+                    <span>Lorem ipsum dolor sit amet consec</span>
+                </div> -->
+            </div>
+        </section>
+
+
+        <footer>
+            <div class="totalQuestions">
+                <!-- <span><p>2</p>Of<p>5</p>Questions</span> -->
+            </div>
+            <button class="nextBtn">Next Question</button>
+        </footer>
+    </div>
+
+    <div class="resultBox">
+        <div class="completeText">Your done!</div>
+        <div class="scoreText">
+            <span>dang, you only got <p>2</p> out of <p>5</p></span>
+        </div>
+        <div class="buttons">
+            <button class="restart">go again</button>
+            <button class="quit">Quit</button>
+        </div>
+    </div>
+
+    <script src="Assets/JS/main.js"></script>
+    <script src="Assets/JS/questions.js"></script>
+
+
 </body>
 </html>
