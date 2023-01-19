@@ -21,7 +21,8 @@ body {
 }
 
 .infoBox.activeInfo,
-.quizBox.activeQuiz {
+.quizBox.activeQuiz,
+.resultBox.activeResult {
     z-index: 5;
     opacity: 1;
     pointer-events: auto;
@@ -252,6 +253,7 @@ footer .totalQuestions span p {
 }
 
 footer .nextBtn {
+    display: none;
     height: 40px;
     padding: 0 13px;
     font-size: 18px;

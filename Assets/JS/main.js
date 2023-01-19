@@ -2,9 +2,12 @@
 var startBtn = document.querySelector('.startBtn button');
 var infoBox = document.querySelector('.infoBox');
 var exitBtn = infoBox.querySelector('.buttons .quit');
-var continueBtn = infoBox.querySelector('.buttons .restart');
+var continueBtn = infoBox.querySelector('.buttons .continue');
 var quizBox = document.querySelector(".quizBox")
 var nextBtn = quizBox.querySelector('.nextBtn');
+var resultBox = document.querySelector('.resultBox');
+var restartQuiz = resultBox.querySelector('.buttons .restart');
+var quitQuiz = resultBox.querySelector('.buttons .quit');
 var totalQuestions = 0;
 var questionNumber = 1;
 var questionList = document.querySelector('.questionList');
@@ -40,9 +43,13 @@ nextBtn.onclick = () => {
         questionNumber++;
         showQuestions(totalQuestions);
         questionCounter(questionNumber);
+        clearInterval(counter);
+        startTimer(timerValue);
+        nextBtn.style.display = 'none';
 
     } else {
         console.log('Questions Complete');
+        showResultbox();
     }
 }
 
@@ -66,6 +73,7 @@ function showQuestions(index) {
 }
 
 function optionSelected(answer) {
+    clearInterval(counter);
     var userAnswer = answer.textContent;
     var correctAnswer = questions[totalQuestions].answer;
     var allOptions = questionList.children.length;
@@ -87,16 +95,30 @@ function optionSelected(answer) {
     for (let i = 0; i < allOptions; i++) {
         questionList.children[i].classList.add('disabled');
     }
+    nextBtn.style.display = 'block';
+}
+
+function showResultbox () {
+    infoBox.classList.remove("activeInfo");
+    quizBox.classList.remove('activeQuiz');
+    resultBox.classList.add('activeResult');
 }
 
 
+
+
 var counter;
+var timerValue = 15;
 
 function startTimer (time) {
     counter = setInterval(timer, 1000);
     function timer() {
         timeCount.textContent = time;
         time--;
+        if(time < 0){
+            clearInterval(counter);
+            timeCount.textContent = '00';
+        }
     }
 }
 
