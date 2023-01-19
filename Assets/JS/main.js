@@ -7,7 +7,8 @@ var quizBox = document.querySelector(".quizBox")
 var nextBtn = quizBox.querySelector('.nextBtn');
 var totalQuestions = 0;
 var questionNumber = 1;
-var questionList =document.querySelector('.questionList');
+var questionList = document.querySelector('.questionList');
+var timeCount = quizBox.querySelector('.timer .timerSec');
 
 
 // if "startBtn" is clicked iniate quiz
@@ -28,6 +29,7 @@ continueBtn.onclick = ()=> {
     quizBox.classList.add('activeQuiz');
     showQuestions(0);
     questionCounter(1);
+    startTimer(15);
 }
 
 
@@ -73,11 +75,28 @@ function optionSelected(answer) {
     }else {
         answer.classList.add('wrong')
         console.log('wronnnggggg!');
+
+        for (let i = 0; i < allOptions; i++) {
+            if(questionList.children[i].textContent == correctAnswer) {
+                questionList.children[i].setAttribute("class", "option correct");
+            }
+        }
     }
 
-
-    for (let i = 0; i < allOptions.length; i++) {
+//locks selections after user selection
+    for (let i = 0; i < allOptions; i++) {
         questionList.children[i].classList.add('disabled');
+    }
+}
+
+
+var counter;
+
+function startTimer (time) {
+    counter = setInterval(timer, 1000);
+    function timer() {
+        timeCount.textContent = time;
+        time--;
     }
 }
 
@@ -88,6 +107,7 @@ function questionCounter(index){
     var totalCount = '<span><p>' + index + '</p>of<p>' + questions.length + '</p>Questions</span>';
     quesCount.innerHTML = totalCount;
 }
+
 
 
 
