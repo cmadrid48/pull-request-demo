@@ -77,7 +77,7 @@ body {
     font-size: 17px;
 }
 
-.infoBox .buttons {
+.infoBox .beginButtons {
     height: 60px;
     display: flex;
     align-items: center;
@@ -86,7 +86,7 @@ body {
     border-top: 1px solid lightgrey;
 }
 
-.infoBox .buttons button {
+.infoBox .beginButtons button {
     margin: 0 5px;
     height: 40px;
     width: 100px;

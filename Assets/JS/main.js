@@ -1,8 +1,8 @@
 // Selecting all elements
 var startBtn = document.querySelector('.startBtn button');
 var infoBox = document.querySelector('.infoBox');
-var exitBtn = infoBox.querySelector('.buttons .quit');
-var continueBtn = infoBox.querySelector('.buttons .continue');
+var exitBtn = infoBox.querySelector('.beginButtons .quit');
+var continueBtn = infoBox.querySelector('.beginButtons .continue');
 var quizBox = document.querySelector(".quizBox")
 var nextBtn = quizBox.querySelector('.nextBtn');
 var resultBox = document.querySelector('.resultBox');
@@ -78,7 +78,9 @@ function optionSelected(answer) {
     var correctAnswer = questions[totalQuestions].answer;
     var allOptions = questionList.children.length;
     if(userAnswer == correctAnswer) {
-        answer.classList.add('correct')
+        userScore += 1;
+        console.log(userScore);
+        answer.classList.add('correct');
         console.log('answer right!');
     }else {
         answer.classList.add('wrong')
@@ -98,10 +100,30 @@ function optionSelected(answer) {
     nextBtn.style.display = 'block';
 }
 
+
+
+var userScore = 0;
+
+
+
 function showResultbox () {
     infoBox.classList.remove("activeInfo");
     quizBox.classList.remove('activeQuiz');
     resultBox.classList.add('activeResult');
+    var scoreText = resultBox.querySelector('.scoreText');
+    if(userScore > 3){
+        var scoreTag = '<span>wow, you got <p>' + userScore + '</p> out of <p>' + questions.length + '</p></span>';
+        scoreText.innerHTML = scoreTag;
+    }
+    else if(userScore > 1){
+        var scoreTag = '<span>you got <p>' + userScore + '</p> out of <p>' + questions.length + '</p></span>';
+        scoreText.innerHTML = scoreTag;
+    }
+    else{
+        var scoreTag = '<span>dang, you only got <p>' + userScore + '</p> out of <p>' + questions.length + '</p></span>';
+        scoreText.innerHTML = scoreTag;
+    }
+
 }
 
 
