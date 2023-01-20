@@ -1,4 +1,4 @@
-# Quiz
+# theWorldsHardestQuiz
 
 This is a simple 5 question timed quiz. Each question will be displayed for 15 seconds before moving on to the next one.
 
