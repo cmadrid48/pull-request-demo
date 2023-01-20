@@ -7,7 +7,7 @@ This is a simple 5 question timed quiz. Each question will be displayed for 15 s
 Use git clone [https://github.com/cmadrid48/theWorldsHardestQuiz](https://github.com/cmadrid48/theWorldsHardestQuiz) to take worldsHardestQuiz.
 
 ```bash
-git clone https://github.com/cmadrid48/theWorldsHardestQuiz/settings "your folder"
+git clone https://github.com/cmadrid48/theWorldsHardestQuiz "your folder"
 ```
 
 ## Usage
